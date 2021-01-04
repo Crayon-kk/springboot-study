@@ -22,8 +22,6 @@ class SpringbootStudyApplicationTests {
 
     @Test
     public void aopTest() {
-        List<Integer> list = new ArrayList<>();
-        Class<? extends List> aClass = list.getClass();
         aopService.processData(10, 2);
     }
 
@@ -38,10 +36,13 @@ class SpringbootStudyApplicationTests {
         System.out.println(getArrayListCapacity(list));//10
 
         //有参构造初始为0
-        List<Integer> list1 = new ArrayList<>(0);
+        List<Integer> list1 = new ArrayList<>(2);
         //初始容量为0
         System.out.println(getArrayListCapacity(list1));//0
         //添加一个元素后初始容量变为1
+        list1.add(1);
+        list1.add(1);
+        list1.add(1);
         list1.add(1);
         System.out.println(getArrayListCapacity(list1));//1
     }
