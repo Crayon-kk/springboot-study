@@ -13,7 +13,7 @@ public class Book implements BeanNameAware, BeanFactoryAware,
 
     private String bookName;
     public Book(){
-        System.out.println("Book Initializing ");
+        System.out.println("Book 构造方法 ");
     }
 
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {

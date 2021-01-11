@@ -73,6 +73,25 @@ class SpringbootStudyApplicationTests {
         System.out.println("Book name = " + book.getBookName());
         ((ClassPathXmlApplicationContext) context).destroy();
 
+        //运行结果
+//        Book Initializing
+//        setBookName: Book name has set.
+//        Book.setBeanName invoke
+//        Book.setBeanFactory invoke
+//        Book.setApplicationContext invoke
+//        MyBeanPostProcessor.postProcessBeforeInitialization
+//        @PostConstruct
+//        Book.afterPropertiesSet invoke
+//        Book.myPostConstruct invoke
+//        MyBeanPostProcessor.postProcessAfterInitialization
+//        Book name = thingking in java
+//        @PreDestory
+//        Book.destory invoke
+//        Book.myPreDestory invoke
+//        ---------------destroy-----------------
+
+
+
     }
 
 }
