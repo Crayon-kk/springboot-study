@@ -1,9 +1,12 @@
 package com.crayon.kk;
 
 import com.crayon.kk.service.impl.AopServiceImpl;
+import com.crayon.kk.service.impl.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -62,5 +65,14 @@ class SpringbootStudyApplicationTests {
         }
     }
 
+    @Test
+    public void beanInitTest(){
+        // 为面试而准备的Bean生命周期加载过程
+        ApplicationContext context = new ClassPathXmlApplicationContext("Bean-Lifecycle.xml");
+        Book book = (Book)context.getBean("book");
+        System.out.println("Book name = " + book.getBookName());
+        ((ClassPathXmlApplicationContext) context).destroy();
+
+    }
 
 }
