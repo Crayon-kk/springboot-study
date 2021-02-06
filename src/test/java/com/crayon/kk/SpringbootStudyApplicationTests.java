@@ -90,8 +90,6 @@ class SpringbootStudyApplicationTests {
 //        Book.myPreDestory invoke
 //        ---------------destroy-----------------
 
-
-
     }
 
 }

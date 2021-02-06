@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicStampedReference;
 public class ABADmeoTest {
 
     static AtomicReference<Integer> reference = new AtomicReference<>(100);
+
     static AtomicStampedReference<Integer> stampedReference = new AtomicStampedReference<>(100, 1);
 
     public static void main(String[] args) {
