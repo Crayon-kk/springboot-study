@@ -1,19 +1,25 @@
 package com.crayon.kk;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class AutoProcessTest {
 
     public static void main(String[] args) {
 
-        AtomicInteger integer = new AtomicInteger(5);
-        //当期望值和原始值相等时，则进行更改
-        //expect 期望值 update 修改值
-        boolean b = integer.compareAndSet(5, 2021);
-        System.out.println(b);
-        System.out.println(integer);
+        String s1 = "java";
+        String s2 = "web";
+        String s3 = "javaweb";
+        String s4 = "java"+"web";
+        System.out.println(s3==s4);
+        System.out.println(s3==s1+s2);
 
-        integer.getAndIncrement();
+        String a = new String("1");
+        a.intern();
+        String a1 = "1";
+        System.out.println(a==a1);
+
+        String a2 = new String("1") + new String("1");
+        a2.intern();
+        String a3 = "11";
+        System.out.println(a2==a3);
 
     }
 }
