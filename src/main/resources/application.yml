@@ -1,0 +1,7 @@
+server:
+  servlet:
+    application-display-name: /demo
+
+spring:
+  profiles:
+    active: dev
