@@ -3,11 +3,9 @@ package com.crayon.kk.config;
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * @author 75510
@@ -16,10 +14,9 @@ public class SecurityInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
         System.out.println("SecurityInterceptor.preHandle  >>>>>>>>1");
-
-        return false;
+        //TODO 权限校验
+        return true;
     }
 
     @Override

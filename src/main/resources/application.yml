@@ -1,6 +1,6 @@
-server:
-  servlet:
-    application-display-name: /demo
+#server:
+#  servlet:
+#    application-display-name: /demo
 
 spring:
   profiles:

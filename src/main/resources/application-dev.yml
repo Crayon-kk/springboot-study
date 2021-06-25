@@ -4,11 +4,11 @@ server:
 
 
 #zk连接参数
-curator:
-  retryCount: 2
-  elapsedTimeMs: 20
-  connectString: 127.0.0.1:2181
-  sessionTimeoutMs: 300000
-  connectionTimeoutMs: 300000
+#curator:
+#  retryCount: 2
+#  elapsedTimeMs: 20
+#  connectString: 127.0.0.1:2181
+#  sessionTimeoutMs: 300000
+#  connectionTimeoutMs: 300000
 
 

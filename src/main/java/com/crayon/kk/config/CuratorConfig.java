@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author 75510
  */
-@Configuration
+//@Configuration
 public class CuratorConfig {
 
     @Value("${curator.retryCount}")

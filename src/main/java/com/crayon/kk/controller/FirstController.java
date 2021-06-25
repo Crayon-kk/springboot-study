@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/first")
 public class FirstController {
 
-    private final DistributedLockByCurator curator;
-
-    public FirstController(DistributedLockByCurator curator) {
-        this.curator = curator;
-    }
+//    private final DistributedLockByCurator curator;
+//
+//    public FirstController(DistributedLockByCurator curator) {
+//        this.curator = curator;
+//    }
 
     @GetMapping("/query.do")
     public String first() {
@@ -26,25 +26,25 @@ public class FirstController {
         return "hello world";
     }
 
-    @GetMapping("/test01.do")
-    public boolean lock() {
-        curator.acquireLock("test02");
-        try {
-            TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        return curator.releaseLock("test02");
-    }
-
-    @GetMapping("/test02.do")
-    public boolean lock2()  {
-        curator.acquireLock("test02");
-        try {
-            TimeUnit.SECONDS.sleep(600);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        return curator.releaseLock("test02");
-    }
+//    @GetMapping("/test01.do")
+//    public boolean lock() {
+//        curator.acquireLock("test02");
+//        try {
+//            TimeUnit.SECONDS.sleep(3);
+//        } catch (InterruptedException e) {
+//            Thread.currentThread().interrupt();
+//        }
+//        return curator.releaseLock("test02");
+//    }
+//
+//    @GetMapping("/test02.do")
+//    public boolean lock2()  {
+//        curator.acquireLock("test02");
+//        try {
+//            TimeUnit.SECONDS.sleep(30);
+//        } catch (InterruptedException e) {
+//            Thread.currentThread().interrupt();
+//        }
+//        return curator.releaseLock("test02");
+//    }
 }

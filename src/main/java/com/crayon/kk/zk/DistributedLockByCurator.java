@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * @author 75510
  */
-@Service
+//@Service
 public class DistributedLockByCurator implements InitializingBean {
 
     private static final Logger log = LoggerFactory.getLogger(DistributedLockByCurator.class);
@@ -43,7 +43,7 @@ public class DistributedLockByCurator implements InitializingBean {
                 curatorFramework
                         .create()
                         .creatingParentsIfNeeded()
-                        .withMode(CreateMode.EPHEMERAL)
+                        .withMode(CreateMode.PERSISTENT)
                         .withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE)
                         .forPath(keyPath);
                 log.info("acquireLock|success to acquire lock for path:{}", keyPath);
