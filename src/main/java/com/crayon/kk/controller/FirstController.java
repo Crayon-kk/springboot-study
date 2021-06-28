@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,6 +24,12 @@ public class FirstController {
     @GetMapping("/query.do")
     public String first() {
 
+        System.out.println("test-----" + new Date());
+        try {
+            TimeUnit.SECONDS.sleep(30);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         return "hello world";
     }
 
