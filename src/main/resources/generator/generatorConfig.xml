@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!--根标签-->
+<generatorConfiguration>
+    <!--指定mybatis-generator jar包的位置-->
+    <classPathEntry location="src/main/resources/generator/mysql-connector-java-5.1.45.jar"/>
+<!--    <classPathEntry location="src/main/resources/generator/mysql-connector-java-5.1.45.jar"/>-->
+    <!--id必须指定 其余为默认值-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--默认值-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据源信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/web?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true&amp;useSSL=false"
+                        userId="root" password="root">
+        </jdbcConnection>
+        <!--默认值-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--实体类生成位置-->
+        <javaModelGenerator targetPackage="com.crayon.kk.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--SQL xml生成位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <!--默认值-->
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--mapper生成位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.crayon.kk.mapper"
+                             targetProject="src/main/java">
+            <!--默认值-->
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--指定表 标签中的属性你应该很熟悉(通用mapper)-->
+        <!--domainObjectName="ExamQuestion" 指定生成的实体类名-->
+        <table tableName="user" domainObjectName="UserInfo" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="false"></table>
+    </context>
+</generatorConfiguration>

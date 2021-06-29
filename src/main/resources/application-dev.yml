@@ -2,7 +2,6 @@ server:
   port: 8080
 
 
-
 #zk连接参数
 #curator:
 #  retryCount: 2
@@ -10,5 +9,10 @@ server:
 #  connectString: 127.0.0.1:2181
 #  sessionTimeoutMs: 300000
 #  connectionTimeoutMs: 300000
-
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/web?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
 
