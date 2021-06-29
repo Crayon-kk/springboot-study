@@ -1,6 +1,7 @@
 package com.crayon.kk.controller;
 
 import com.crayon.kk.entity.UserInfo;
+import com.crayon.kk.response.ResultResponse;
 import com.crayon.kk.service.impl.MysqlConnectServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,8 @@ public class MysqlConnectController {
     }
 
     @GetMapping("/mysql")
-    public UserInfo getUserInfo(){
-        return service.getUserInfos();
+    public ResultResponse<UserInfo> getUserInfo(){
+
+        return ResultResponse.success(service.getUserInfos());
     }
 }
