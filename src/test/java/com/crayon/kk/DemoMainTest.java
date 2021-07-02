@@ -11,16 +11,15 @@ import java.nio.charset.StandardCharsets;
  */
 public class DemoMainTest {
     public static void main(String[] args) throws UnsupportedEncodingException {
+        //3
         System.out.println("中".getBytes(StandardCharsets.UTF_8).length);
+        //6
         System.out.println("中中".getBytes(StandardCharsets.UTF_8).length);
+        //1
+        System.out.println("中".getBytes(StandardCharsets.US_ASCII).length);
+        //2
         System.out.println("中".getBytes("GBK").length);
+        //4
         System.out.println("中中".getBytes("GBK").length);
-
-        System.out.println("n".getBytes(StandardCharsets.UTF_8).length);
-        System.out.println("nn".getBytes(StandardCharsets.UTF_8).length);
-        System.out.println("n".getBytes("GBK").length);
-        System.out.println("nn".getBytes("GBK").length);
-
     }
 }
-
